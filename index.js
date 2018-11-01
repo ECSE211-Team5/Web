@@ -8,6 +8,6 @@ app.get('/', function(req,res){
     res.render('home');
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log('server starts');
+app.listen(process.env.PORT || 8080, process.env.IP, function(){
+    console.log('server starts on: '+ process.env.IP + ": " +  process.env.PORT || 8080);
 })
