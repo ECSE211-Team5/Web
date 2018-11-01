@@ -4,9 +4,9 @@
     <compoundname>ca::mcgill::ecse211::project::ColorCalibrator</compoundname>
     <innerclass refid="enumca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1_1_color" prot="public">ca::mcgill::ecse211::project::ColorCalibrator::Color</innerclass>
       <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a124041c0ae386c57221a7b83e35b1d15" prot="private" static="yes" mutable="no">
+      <memberdef kind="variable" id="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a18084c47a3376fe0cee35b89072b3d0f" prot="private" static="yes" mutable="no">
         <type>Color</type>
-        <definition>Color ca.mcgill.ecse211.project.ColorCalibrator.currentColor</definition>
+        <definition>volatile Color ca.mcgill.ecse211.project.ColorCalibrator.currentColor</definition>
         <argsstring></argsstring>
         <name>currentColor</name>
         <briefdescription>
@@ -391,7 +391,6 @@
         </inbodydescription>
         <location file="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/ColorCalibrator.java" line="38" column="1" bodyfile="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/ColorCalibrator.java" bodystart="38" bodyend="59"/>
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display_1ab508a8bc2b738499bec2c432a814cba5" compoundref="_display_8java" startline="57" endline="106">ca.mcgill.ecse211.project.Display.run</referencedby>
-        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_ring_searcher_1a86d4b320aa7e8368e38c5a38c030adb3" compoundref="_ring_searcher_8java" startline="59" endline="79">ca.mcgill.ecse211.project.RingSearcher.search</referencedby>
       </memberdef>
       <memberdef kind="function" id="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a1acf05f9523b2c0f329d4a7cbf1b9c47" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Color</type>
@@ -420,7 +419,7 @@
 </para>    </detaileddescription>
     <location file="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/ColorCalibrator.java" line="13" column="1" bodyfile="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/ColorCalibrator.java" bodystart="13" bodyend="72"/>
     <listofallmembers>
-      <member refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a124041c0ae386c57221a7b83e35b1d15" prot="private" virt="non-virtual"><scope>ca::mcgill::ecse211::project::ColorCalibrator</scope><name>currentColor</name></member>
+      <member refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a18084c47a3376fe0cee35b89072b3d0f" prot="private" virt="non-virtual"><scope>ca::mcgill::ecse211::project::ColorCalibrator</scope><name>currentColor</name></member>
       <member refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a92e653a6a9f7a31cb7b6f9bc2e732133" prot="public" virt="non-virtual"><scope>ca::mcgill::ecse211::project::ColorCalibrator</scope><name>getColor</name></member>
       <member refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a1acf05f9523b2c0f329d4a7cbf1b9c47" prot="public" virt="non-virtual"><scope>ca::mcgill::ecse211::project::ColorCalibrator</scope><name>getColor</name></member>
       <member refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a1f7f1c426357281a07d70808ac9a651d" prot="package" virt="non-virtual"><scope>ca::mcgill::ecse211::project::ColorCalibrator</scope><name>lowerBlueBBound</name></member>

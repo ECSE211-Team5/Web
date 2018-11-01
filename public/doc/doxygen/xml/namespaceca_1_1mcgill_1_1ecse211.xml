@@ -5,8 +5,8 @@
     <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1localization">ca::mcgill::ecse211::localization</innernamespace>
     <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1odometer">ca::mcgill::ecse211::odometer</innernamespace>
     <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1project">ca::mcgill::ecse211::project</innernamespace>
-    <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1sensors">ca::mcgill::ecse211::sensors</innernamespace>
-    <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1_test">ca::mcgill::ecse211::Test</innernamespace>
+    <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1tests">ca::mcgill::ecse211::tests</innernamespace>
+    <innernamespace refid="namespaceca_1_1mcgill_1_1ecse211_1_1threads">ca::mcgill::ecse211::threads</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

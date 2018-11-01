@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['Type',['../enumca_1_1mcgill_1_1ecse211_1_1_test_1_1_component_test_1_1_type.html',1,'ca::mcgill::ecse211::Test::ComponentTest']]]
+  ['sensordata',['SensorData',['../classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data.html',1,'ca::mcgill::ecse211::threads']]]
 ];

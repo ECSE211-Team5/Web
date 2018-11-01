@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ultrasoniclocalizer',['UltrasonicLocalizer',['../classca_1_1mcgill_1_1ecse211_1_1localization_1_1_ultrasonic_localizer.html',1,'ca::mcgill::ecse211::localization']]],
-  ['ultrasonicpoller',['UltrasonicPoller',['../classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_ultrasonic_poller.html',1,'ca::mcgill::ecse211::sensors']]]
+  ['threadcontrol',['ThreadControl',['../classca_1_1mcgill_1_1ecse211_1_1threads_1_1_thread_control.html',1,'ca::mcgill::ecse211::threads']]],
+  ['type',['Type',['../enumca_1_1mcgill_1_1ecse211_1_1tests_1_1_component_test_1_1_type.html',1,'ca::mcgill::ecse211::tests::ComponentTest']]]
 ];

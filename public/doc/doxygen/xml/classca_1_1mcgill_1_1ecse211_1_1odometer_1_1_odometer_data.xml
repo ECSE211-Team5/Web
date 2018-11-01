@@ -199,9 +199,9 @@
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometry_correction_1aad66a7030ac00f3a9cbe7bc33c25acbf" compoundref="_odometry_correction_8java" startline="50" endline="92">ca.mcgill.ecse211.odometer.OdometryCorrection.run</referencedby>
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometry_correction_1a21a351682dc75060d6a5f15ad4775068" compoundref="_odometry_correction_8java" startline="99" endline="112">ca.mcgill.ecse211.odometer.OdometryCorrection.doCorrection</referencedby>
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display_1ab508a8bc2b738499bec2c432a814cba5" compoundref="_display_8java" startline="57" endline="106">ca.mcgill.ecse211.project.Display.run</referencedby>
-        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation_1ada8a324c1d391698164476d4d728f0c4" compoundref="_navigation_8java" startline="72" endline="89">ca.mcgill.ecse211.project.Navigation.travelTo</referencedby>
-        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation_1a8b363632288a415edb9d32932555d233" compoundref="_navigation_8java" startline="99" endline="124">ca.mcgill.ecse211.project.Navigation.turnTo</referencedby>
-        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_ring_searcher_1a86d4b320aa7e8368e38c5a38c030adb3" compoundref="_ring_searcher_8java" startline="59" endline="79">ca.mcgill.ecse211.project.RingSearcher.search</referencedby>
+        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation_1ada8a324c1d391698164476d4d728f0c4" compoundref="_navigation_8java" startline="70" endline="97">ca.mcgill.ecse211.project.Navigation.travelTo</referencedby>
+        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation_1a3bbe0645f2b3b3d0986b4a707fb5a00c" compoundref="_navigation_8java" startline="144" endline="165">ca.mcgill.ecse211.project.Navigation.turnTo</referencedby>
+        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_ring_searcher_1a58fdaba16c2b961446d1474b76e66e49" compoundref="_ring_searcher_8java" startline="36" endline="46">ca.mcgill.ecse211.threads.RingSearcher.RingSearcher</referencedby>
       </memberdef>
       <memberdef kind="function" id="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_data_1aaa06f190d634299fcb1b97a1891dad85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -380,6 +380,7 @@
         <location file="/home/ccc/FinalProject/src/ca/mcgill/ecse211/odometer/OdometerData.java" line="197" column="1" bodyfile="/home/ccc/FinalProject/src/ca/mcgill/ecse211/odometer/OdometerData.java" bodystart="197" bodyend="208"/>
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1localization_1_1_light_localizer_1a9fc3d6cdd897e9db86fc9d71dc914863" compoundref="_light_localizer_8java" startline="54" endline="93">ca.mcgill.ecse211.localization.LightLocalizer.localize</referencedby>
         <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1localization_1_1_ultrasonic_localizer_1ab78196997d7409aec0c35603686989ad" compoundref="_ultrasonic_localizer_8java" startline="57" endline="63">ca.mcgill.ecse211.localization.UltrasonicLocalizer.localize</referencedby>
+        <referencedby refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation_1a48eeb9ae2da23664421e8da5642054c7" compoundref="_navigation_8java" startline="104" endline="114">ca.mcgill.ecse211.project.Navigation.moveWithCorrection</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -392,13 +393,13 @@
 <simplesect kind="author"><para>Michael Smith </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="42">
+      <node id="47">
         <label>ca.mcgill.ecse211.odometer.Odometer</label>
         <link refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer"/>
-        <childnode refid="41" relation="public-inheritance">
+        <childnode refid="46" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="41">
+      <node id="46">
         <label>ca.mcgill.ecse211.odometer.OdometerData</label>
         <link refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_data"/>
       </node>

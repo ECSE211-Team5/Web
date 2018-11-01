@@ -5,7 +5,7 @@
     <basecompoundref prot="public" virt="non-virtual">Runnable</basecompoundref>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display_1a7ab3b01e19165101ebc842fb4965a986" prot="private" static="no" mutable="no">
-        <type><ref refid="classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_sensor_data" kindref="compound">SensorData</ref></type>
+        <type><ref refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data" kindref="compound">SensorData</ref></type>
         <definition>SensorData ca.mcgill.ecse211.project.Display.sensdata</definition>
         <argsstring></argsstring>
         <name>sensdata</name>
@@ -146,7 +146,7 @@
         </inbodydescription>
         <location file="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/Display.java" line="35" column="1" bodyfile="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/Display.java" bodystart="35" bodyend="39"/>
         <references refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_1a99171f11e34dea918fa9dd069d721439" compoundref="_odometer_8java" startline="79" endline="88">ca.mcgill.ecse211.odometer.Odometer.getOdometer</references>
-        <references refid="classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_sensor_data_1ab8aef4bdb5d9f3dad399656e00af2539" compoundref="_sensor_data_8java" startline="70" endline="82">ca.mcgill.ecse211.sensors.SensorData.getSensorData</references>
+        <references refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data_1a8260aba53b4474ca1275e4ce26157977" compoundref="_sensor_data_8java" startline="61" endline="73">ca.mcgill.ecse211.threads.SensorData.getSensorData</references>
       </memberdef>
       <memberdef kind="function" id="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display_1a690cd91bcc8024950c2b8e3b2613c801" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -207,10 +207,10 @@
         </inbodydescription>
         <location file="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/Display.java" line="57" column="1" bodyfile="/home/ccc/FinalProject/src/ca/mcgill/ecse211/project/Display.java" bodystart="57" bodyend="106"/>
         <references refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_data_1a8f40f0264c68f0cbed4fff1723ae7863" compoundref="_odometer_data_8java" startline="84" endline="106">ca.mcgill.ecse211.odometer.OdometerData.getXYT</references>
-        <references refid="classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_sensor_data_1a4e0eabd547726c90bd0b7252557d7ad7" compoundref="_sensor_data_8java" startline="90" endline="110">ca.mcgill.ecse211.sensors.SensorData.getDL</references>
-        <references refid="classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_sensor_data_1a0abd08431dae67c7ee0e7a18b5305f91" compoundref="_sensor_data_8java" startline="117" endline="129">ca.mcgill.ecse211.sensors.SensorData.getRGB</references>
+        <references refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data_1a76313564e284f5cdb66aefce4e595f3b" compoundref="_sensor_data_8java" startline="104" endline="111">ca.mcgill.ecse211.threads.SensorData.getRGB</references>
+        <references refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data_1a39eec50582f0e4bcff8a4669c48e1609" compoundref="_sensor_data_8java" startline="88" endline="97">ca.mcgill.ecse211.threads.SensorData.getL</references>
         <references refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator_1a92e653a6a9f7a31cb7b6f9bc2e732133" compoundref="_color_calibrator_8java" startline="38" endline="59">ca.mcgill.ecse211.project.ColorCalibrator.getColor</references>
-        <references refid="classca_1_1mcgill_1_1ecse211_1_1sensors_1_1_sensor_data_1a7ad543db5c907b4bd3329dbb34b4e9d9" compoundref="_sensor_data_8java" startline="136" endline="148">ca.mcgill.ecse211.sensors.SensorData.getA</references>
+        <references refid="classca_1_1mcgill_1_1ecse211_1_1threads_1_1_sensor_data_1acc8f6cc56f39c8ea6b812cd8b135eca6" compoundref="_sensor_data_8java" startline="119" endline="121">ca.mcgill.ecse211.threads.SensorData.getA</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -224,17 +224,6 @@
 <simplesect kind="author"><para>Kamy Moussavi Kafi </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="6">
-        <label>ca.mcgill.ecse211.project.Display</label>
-        <link refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>Runnable</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="8">
         <label>ca.mcgill.ecse211.project.Display</label>
         <link refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display"/>
@@ -242,6 +231,17 @@
         </childnode>
       </node>
       <node id="9">
+        <label>Runnable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>ca.mcgill.ecse211.project.Display</label>
+        <link refid="classca_1_1mcgill_1_1ecse211_1_1project_1_1_display"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
         <label>Runnable</label>
       </node>
     </collaborationgraph>

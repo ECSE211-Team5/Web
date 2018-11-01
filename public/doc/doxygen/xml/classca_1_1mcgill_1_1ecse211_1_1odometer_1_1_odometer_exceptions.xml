@@ -41,24 +41,24 @@
 <simplesect kind="author"><para>Kamy Moussavi Kafi </para></simplesect>
 </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="45">
+      <node id="50">
         <label>Exception</label>
       </node>
-      <node id="44">
+      <node id="49">
         <label>ca.mcgill.ecse211.odometer.OdometerExceptions</label>
         <link refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_exceptions"/>
-        <childnode refid="45" relation="public-inheritance">
+        <childnode refid="50" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="47">
+      <node id="52">
         <label>Exception</label>
       </node>
-      <node id="46">
+      <node id="51">
         <label>ca.mcgill.ecse211.odometer.OdometerExceptions</label>
         <link refid="classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_exceptions"/>
-        <childnode refid="47" relation="public-inheritance">
+        <childnode refid="52" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

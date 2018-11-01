@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['display',['Display',['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_display.html',1,'ca.mcgill.ecse211.project.Display'],['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_display.html#af0970123ca090749bfb2f5b9f478c01d',1,'ca.mcgill.ecse211.project.Display.Display(TextLCD lcd)'],['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_display.html#a690cd91bcc8024950c2b8e3b2613c801',1,'ca.mcgill.ecse211.project.Display.Display(TextLCD lcd, long timeout)']]],
-  ['docorrection',['doCorrection',['../classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometry_correction.html#a21a351682dc75060d6a5f15ad4775068',1,'ca::mcgill::ecse211::odometer::OdometryCorrection']]]
+  ['colorcalibrator',['ColorCalibrator',['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_color_calibrator.html',1,'ca::mcgill::ecse211::project']]],
+  ['componenttest',['ComponentTest',['../classca_1_1mcgill_1_1ecse211_1_1tests_1_1_component_test.html',1,'ca::mcgill::ecse211::tests']]],
+  ['convertdistance',['convertDistance',['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_navigation.html#ac9e260bcd619ffa4820d7d0de7ea1c12',1,'ca::mcgill::ecse211::project::Navigation']]],
+  ['ctype',['cType',['../classca_1_1mcgill_1_1ecse211_1_1project_1_1_main.html#af8faa68af4a989e55864fcafd5df2bee',1,'ca::mcgill::ecse211::project::Main']]],
+  ['odometer',['odometer',['../namespaceca_1_1mcgill_1_1ecse211_1_1odometer.html',1,'ca::mcgill::ecse211']]]
 ];

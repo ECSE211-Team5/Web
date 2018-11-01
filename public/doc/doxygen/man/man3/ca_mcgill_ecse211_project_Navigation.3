@@ -1,4 +1,4 @@
-.TH "ca.mcgill.ecse211.project.Navigation" 3 "Thu Oct 25 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.TH "ca.mcgill.ecse211.project.Navigation" 3 "Thu Nov 1 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,7 +16,22 @@ ca.mcgill.ecse211.project.Navigation
 .RI "void \fBtravelTo\fP (double x, double y, boolean avoid)"
 .br
 .ti -1c
-.RI "void \fBturnTo\fP (double angle, boolean async, boolean useGyro)"
+.RI "synchronized void \fBmoveWithCorrection\fP (double distance, double theta)"
+.br
+.ti -1c
+.RI "synchronized void \fBturnTo\fP (double angle)"
+.br
+.ti -1c
+.RI "void \fBfindTunnel\fP (int[] ll, int[] ur)"
+.br
+.ti -1c
+.RI "void \fBgoThroughTunnel\fP ()"
+.br
+.ti -1c
+.RI "void \fBgoToRingSet\fP ()"
+.br
+.ti -1c
+.RI "void \fBapproachRingSet\fP ()"
 .br
 .ti -1c
 .RI "void \fBrotate\fP (int angle)"
@@ -72,9 +87,13 @@ This navigation class constructor sets up our robot to begin navigating a partic
 .PP
 
 .PP
-Definition at line 46 of file Navigation\&.java\&.
+Definition at line 45 of file Navigation\&.java\&.
 .SH "Member Function Documentation"
 .PP 
+.SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.approachRingSet ()"
+this method approaches the ring set by paying attention to the reading of us sensor, stops at the place when the robot can reach the ring 
+.PP
+Definition at line 195 of file Navigation\&.java\&.
 .SS "static int ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.convertDistance (double radius, double distance)\fC [static]\fP"
 This method allows the conversion of a distance to the total rotation of each wheel need to cover that distance\&.
 .PP
@@ -92,7 +111,41 @@ A converted distance
 .PP
 
 .PP
-Definition at line 152 of file Navigation\&.java\&.
+Definition at line 225 of file Navigation\&.java\&.
+.SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.findTunnel (int [] ll, int [] ur)"
+found the tunnel based on the ll and ur coordinate, after the method, the robot will go the the entrance of the tunnel facing the tunnel 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIll\fP lower left corner coordinate 
+.br
+\fIur\fP upper right corner coordinate 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file Navigation\&.java\&.
+.SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.goThroughTunnel ()"
+the method for go through the tunnel (call find tunnel before calling this method) 
+.PP
+Definition at line 180 of file Navigation\&.java\&.
+.SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.goToRingSet ()"
+this method navigate the robot to the ring set, find the right position of the ring set 
+.PP
+Definition at line 187 of file Navigation\&.java\&.
+.SS "synchronized void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.moveWithCorrection (double distance, double theta)"
+Move a certain distance with correction (using coordinate system) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdistance\fP distance to cover 
+.br
+\fItheta\fP theta to be corrected each time 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file Navigation\&.java\&.
 .SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.rotate (int angle)"
 Rotate the robot by certain angle
 .PP
@@ -103,13 +156,13 @@ Rotate the robot by certain angle
 .PP
 
 .PP
-Definition at line 131 of file Navigation\&.java\&.
+Definition at line 204 of file Navigation\&.java\&.
 .SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.stop ()"
 Stop the motor 
 .PP
-Definition at line 139 of file Navigation\&.java\&.
+Definition at line 212 of file Navigation\&.java\&.
 .SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.travelTo (double x, double y, boolean avoid)"
-(\fIImprove\fP) This method travel the robot to desired position by following the line (Always rotate 90 degree)
+This method travel the robot to desired position by following the line (Always rotate 90 degree), along with a correction
 .PP
 When avoid=true, the nav thread will handle traveling\&. If you want to travel without avoidance, this is also possible\&. In this case, the method in the \fBNavigation\fP class is used\&.
 .PP
@@ -120,14 +173,12 @@ When avoid=true, the nav thread will handle traveling\&. If you want to travel w
 \fIy\fP The y coordinate to travel to (in cm) 
 .br
 \fIavoid\fP the robot will pay attention to the distance from ultrasonic sensor to avoid abstacle when navigating 
-.br
-\fIdoCorrection\fP 
 .RE
 .PP
 
 .PP
-Definition at line 72 of file Navigation\&.java\&.
-.SS "void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.turnTo (double angle, boolean async, boolean useGyro)"
+Definition at line 70 of file Navigation\&.java\&.
+.SS "synchronized void ca\&.mcgill\&.ecse211\&.project\&.Navigation\&.turnTo (double angle)"
 (\fIImprove\fP \fIConsider to discard\fP) This method is where the logic for the odometer will run\&. Use the methods provided from the OdometerData class to implement the odometer\&.
 .PP
 \fBParameters:\fP
@@ -139,7 +190,7 @@ Definition at line 72 of file Navigation\&.java\&.
 .PP
 
 .PP
-Definition at line 99 of file Navigation\&.java\&.
+Definition at line 144 of file Navigation\&.java\&.
 
 .SH "Author"
 .PP 
