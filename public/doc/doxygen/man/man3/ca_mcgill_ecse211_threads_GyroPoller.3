@@ -1,0 +1,164 @@
+.TH "ca.mcgill.ecse211.threads.GyroPoller" 3 "Fri Nov 2 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ca.mcgill.ecse211.threads.GyroPoller
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Runnable\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGyroPoller\fP (SampleProvider \fBus\fP, float[] \fBlgData\fP, \fBSensorData\fP \fBcont\fP)  throws OdometerExceptions "
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGyroPoller\fP \fBInstance\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprocessData\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SampleProvider \fBus\fP"
+.br
+.ti -1c
+.RI "\fBSensorData\fP \fBcont\fP"
+.br
+.ti -1c
+.RI "float [] \fBlgData\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class helps our robot to navigate using a gyroscope <Not using, deprecated> 
+.PP
+\fBAuthor:\fP
+.RS 4
+Caspar Cedro 
+.PP
+Percy Chen 
+.PP
+Patrick Erath 
+.PP
+Anssam Ghezala 
+.PP
+Susan Matuszewski 
+.PP
+Kamy Moussavi Kafi 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file GyroPoller\&.java\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.GyroPoller (SampleProvider us, float [] lgData, \fBSensorData\fP cont) throws \fBOdometerExceptions\fP"
+This constructor creates an instance of the \fBGyroPoller\fP class to aid navigation
+.PP
+\fBParameters:\fP
+.RS 4
+\fIus\fP A SampleProvider class instance that helps us to store an array of ultrasonic sensor data\&. 
+.br
+\fIlgData\fP An array used to store data\&. 
+.br
+\fIcont\fP A \fBSensorData\fP object instance used to manage sensor data\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIOdometerExceptions\fP 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file GyroPoller\&.java\&.
+.PP
+.nf
+31                                                                                                   {
+32     this\&.us = us;
+33     this\&.cont = cont;
+34     this\&.lgData = lgData;
+35   }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.processData ()\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file GyroPoller\&.java\&.
+.PP
+.nf
+52                                {
+53     us\&.fetchSample(lgData, 0); // acquire data
+54     int distance = (int) (lgData[0]); // extract from buffer, cast to int
+55     // Ensure the distance is between 0 and 360
+56     while (distance < 0) {
+57       distance += 360;
+58     }
+59 
+60     while (distance > 360) {
+61       distance -= 360;
+62     }
+63     cont\&.setA(distance); // now take action depending on value
+64   }
+.fi
+.SS "void ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.run ()"
+This method is called by a \fBUltrasonicPoller\fP (Thread) instance when it is asked to start executing
+.PP
+Sensors now return floats using a uniform protocol\&. Need to convert US result to an integer [0,255] (non-Javadoc)
+.PP
+\fBSee also:\fP
+.RS 4
+java\&.lang\&.Thread::run() 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file GyroPoller\&.java\&.
+.PP
+.nf
+46                     {
+47     while (true) {
+48       processData();
+49     }
+50   }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSensorData\fP ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.cont\fC [protected]\fP"
+
+.PP
+Definition at line 18 of file GyroPoller\&.java\&.
+.SS "\fBGyroPoller\fP ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.Instance"
+
+.PP
+Definition at line 20 of file GyroPoller\&.java\&.
+.SS "float [] ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.lgData\fC [protected]\fP"
+
+.PP
+Definition at line 19 of file GyroPoller\&.java\&.
+.SS "SampleProvider ca\&.mcgill\&.ecse211\&.threads\&.GyroPoller\&.us\fC [protected]\fP"
+
+.PP
+Definition at line 17 of file GyroPoller\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ECSE211 - Fall 2018 - Final Project from the source code\&.

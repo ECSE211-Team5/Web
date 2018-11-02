@@ -1,0 +1,119 @@
+.TH "ca.mcgill.ecse211.project.ColorCalibrator" 3 "Fri Nov 2 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ca.mcgill.ecse211.project.ColorCalibrator
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "enum \fBColor\fP"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static Color \fBgetColor\fP (int r, int g, int b)"
+.br
+.ti -1c
+.RI "static Color \fBgetColor\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class is used to check the color of a ring under a light sensor
+.PP
+\fBAuthor:\fP
+.RS 4
+Caspar Cedro 
+.PP
+Percy Chen 
+.PP
+Patrick Erath 
+.PP
+Anssam Ghezala 
+.PP
+Susan Matuszewski 
+.PP
+Kamy Moussavi Kafi 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file ColorCalibrator\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static Color ca\&.mcgill\&.ecse211\&.project\&.ColorCalibrator\&.getColor (int r, int g, int b)\fC [static]\fP"
+This method returns the color of the ring currently under the light sensor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIr\fP The red value to check for a ring 
+.br
+\fIg\fP The green value to check for a ring 
+.br
+\fIb\fP The blue value to check for a ring 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A Color enumeration value 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file ColorCalibrator\&.java\&.
+.PP
+.nf
+38                                                     {
+39     if ((r >= lowerYellowRBound && r <= upperYellowRBound)
+40         && (g >= lowerYellowGBound && g <= upperYellowGBound)
+41         && (b >= lowerYellowBBound && b <= upperYellowBBound)) {
+42       currentColor = Color\&.Yellow;
+43     } else if ((r >= lowerBlueRBound && r <= upperBlueRBound)
+44         && (g >= lowerBlueGBound && g <= upperBlueGBound)
+45         && (b >= lowerBlueBBound && b <= upperBlueBBound)) {
+46       currentColor = Color\&.Blue;
+47     } else if ((r >= lowerGreenRBound && r <= upperGreenRBound)
+48         && (g >= lowerGreenGBound && g <= upperGreenGBound)
+49         && (b >= lowerGreenBBound && b <= upperGreenBBound)) {
+50       currentColor = Color\&.Green;
+51     } else if ((r >= lowerOrangeRBound && r <= upperOrangeRBound)
+52         && (g >= lowerOrangeGBound && g <= upperOrangeGBound) && (b == OrangeBBound)) {
+53       currentColor = Color\&.Orange;
+54     } else {
+55       currentColor = Color\&.Other;
+56     }
+57 
+58     return currentColor;
+59   }
+.fi
+.SS "static Color ca\&.mcgill\&.ecse211\&.project\&.ColorCalibrator\&.getColor ()\fC [static]\fP"
+This method gets the last color of the ring under the light sensor
+.PP
+\fBReturns:\fP
+.RS 4
+current color detected by the lightSensor 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file ColorCalibrator\&.java\&.
+.PP
+.nf
+66                                  {
+67     if (currentColor != null)
+68       return currentColor;
+69     else
+70       return Color\&.Other;
+71   }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ECSE211 - Fall 2018 - Final Project from the source code\&.

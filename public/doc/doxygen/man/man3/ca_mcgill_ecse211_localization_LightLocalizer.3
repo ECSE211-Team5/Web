@@ -1,0 +1,131 @@
+.TH "ca.mcgill.ecse211.localization.LightLocalizer" 3 "Fri Nov 2 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ca.mcgill.ecse211.localization.LightLocalizer
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightLocalizer\fP (\fBNavigation\fP nav, EV3LargeRegulatedMotor leftMotor, EV3LargeRegulatedMotor rightMotor)  throws OdometerExceptions "
+.br
+.ti -1c
+.RI "void \fBlocalize\fP (int[] sC)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class helps our robot to localize itself using the light sensor
+.PP
+\fBAuthor:\fP
+.RS 4
+Caspar Cedro 
+.PP
+Percy Chen 
+.PP
+Patrick Erath 
+.PP
+Anssam Ghezala 
+.PP
+Susan Matuszewski 
+.PP
+Kamy Moussavi Kafi 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file LightLocalizer\&.java\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ca\&.mcgill\&.ecse211\&.localization\&.LightLocalizer\&.LightLocalizer (\fBNavigation\fP nav, EV3LargeRegulatedMotor leftMotor, EV3LargeRegulatedMotor rightMotor) throws \fBOdometerExceptions\fP"
+This is the class constructor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIleftMotor\fP 
+.br
+\fIrightMotor\fP 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIOdometerExceptions\fP 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file LightLocalizer\&.java\&.
+.PP
+.nf
+39                                                                    {
+40     this\&.odometer = Odometer\&.getOdometer();
+41     this\&.data = SensorData\&.getSensorData();
+42     this\&.navigation = nav;
+43     this\&.leftMotor = leftMotor;
+44     this\&.rightMotor = rightMotor;
+45   }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ca\&.mcgill\&.ecse211\&.localization\&.LightLocalizer\&.localize (int [] sC)"
+(\fIImprove\fP) Once the robot know what angle it is facing, this method looks for the x,y axis origins knowing it is in the first tile facing north\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsC\fP the coordinate to set to after localization 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file LightLocalizer\&.java\&.
+.PP
+.nf
+53                                  {
+54     leftMotor\&.setSpeed(FORWARD_SPEED);
+55     rightMotor\&.setSpeed(FORWARD_SPEED);
+56 
+57     // 1\&. GO forward find the y=0 line
+58     leftMotor\&.forward();
+59     rightMotor\&.forward();
+60     while (data\&.getL()[0] > blackLineColor);
+61     Sound\&.beep();
+62     odometer\&.setY(0);
+63     // 2\&. Turn and go forward find the x=0 line
+64     navigation\&.turnTo(90);
+65     leftMotor\&.setSpeed(FORWARD_SPEED / 2);
+66     rightMotor\&.setSpeed(FORWARD_SPEED / 2);
+67     leftMotor\&.forward();
+68     rightMotor\&.forward();
+69     while (data\&.getL()[0] > blackLineColor);
+70     Sound\&.beep();
+71     odometer\&.setX(0);
+72     leftMotor\&.setSpeed(FORWARD_SPEED / 2);
+73     rightMotor\&.setSpeed(FORWARD_SPEED / 2);
+74     // 3\&. Go backwards by sensor-wheel center distance in x-direction
+75     leftMotor\&.rotate(Navigation\&.convertDistance(Game\&.WHEEL_RAD, -SENSOR_DIS), true);
+76     rightMotor\&.rotate(Navigation\&.convertDistance(Game\&.WHEEL_RAD, -SENSOR_DIS), false);
+77     // 4\&. Go backwards by sensor-wheel center distance in y-direction
+78     navigation\&.turnTo(0);
+79     leftMotor\&.setSpeed(FORWARD_SPEED / 2);
+80     rightMotor\&.setSpeed(FORWARD_SPEED / 2);
+81     double sensorDistanceOffset = 2\&.5;
+82     leftMotor\&.rotate(
+83         Navigation\&.convertDistance(Game\&.WHEEL_RAD, -SENSOR_DIS - sensorDistanceOffset),
+84         true);
+85     rightMotor\&.rotate(
+86         Navigation\&.convertDistance(Game\&.WHEEL_RAD, -SENSOR_DIS - sensorDistanceOffset),
+87         false);
+88     odometer\&.setTheta(0);
+89     odometer\&.setX(sC[0]);
+90     odometer\&.setY(sC[1]);
+91 
+92   }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ECSE211 - Fall 2018 - Final Project from the source code\&.

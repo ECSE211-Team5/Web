@@ -1,0 +1,150 @@
+.TH "ca.mcgill.ecse211.threads.LightPoller" 3 "Fri Nov 2 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ca.mcgill.ecse211.threads.LightPoller
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBca\&.mcgill\&.ecse211\&.threads\&.ThreadControl\fP\&.
+.PP
+Inherited by \fBca\&.mcgill\&.ecse211\&.threads\&.RGBPoller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightPoller\fP (SampleProvider[] \fBus\fP, float[][] \fBlgData\fP, \fBSensorData\fP \fBcont\fP)  throws OdometerExceptions "
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrunMethod\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SampleProvider \fBus\fP []"
+.br
+.ti -1c
+.RI "\fBSensorData\fP \fBcont\fP"
+.br
+.ti -1c
+.RI "float [][] \fBlgData\fP"
+.br
+.ti -1c
+.RI "float \fBlastValue\fP []"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int \fBWAIT_TIME\fP = 50"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class implements the Light Sensor Poller for our robot it runs pulls the sensor data every 50 miliseconds 
+.PP
+\fBAuthor:\fP
+.RS 4
+Caspar Cedro 
+.PP
+Percy Chen 
+.PP
+Patrick Erath 
+.PP
+Anssam Ghezala 
+.PP
+Susan Matuszewski 
+.PP
+Kamy Moussavi Kafi 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file LightPoller\&.java\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.LightPoller (SampleProvider [] us, float lgData[][], \fBSensorData\fP cont) throws \fBOdometerExceptions\fP"
+This constructor creates an instance of the \fBLightPoller\fP class to provide distance data from an light sensor to our robot\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIus\fP a SampleProvider class instance that helps us to store an array of ultrasonic sensor data\&. 
+.br
+\fIlgData\fP an array of distance data to be used by our Wall Follower's UltrasonicControllers\&. 
+.br
+\fIcont\fP a BangBangController or PController instance that has accumulated distance data stored in usData passed to it\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIOdometerExceptions\fP 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file LightPoller\&.java\&.
+.PP
+.nf
+37                                                                                                        {
+38     this\&.us = us;
+39     this\&.cont = cont;
+40     this\&.lgData = lgData;
+41     this\&.id = sensorNumber;
+42     isStarted = true;
+43     lastValue = new float[2];
+44     sensorNumber++;
+45   }
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.runMethod ()\fC [protected]\fP"
+the run method to be performed in run method, collect light data 
+.PP
+Definition at line 50 of file LightPoller\&.java\&.
+.PP
+.nf
+50                              {
+51     for(int i = 0; i < us\&.length; i++) {
+52       us[i]\&.fetchSample(lgData[i], 0); // acquire data
+53   
+54       int distance = (int) (lgData[i][0] * 100); // extract from buffer, multiply by 100 for convenience
+55                                               // and allow it to be cast to int
+56       cont\&.setL(distance - lastValue[i], id); // now take action depending on value
+57       lastValue[i] = distance; 
+58     }
+59   }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSensorData\fP ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.cont\fC [protected]\fP"
+
+.PP
+Definition at line 18 of file LightPoller\&.java\&.
+.SS "float ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.lastValue[]\fC [protected]\fP"
+
+.PP
+Definition at line 20 of file LightPoller\&.java\&.
+.SS "float [][] ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.lgData\fC [protected]\fP"
+
+.PP
+Definition at line 19 of file LightPoller\&.java\&.
+.SS "SampleProvider ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.us[]\fC [protected]\fP"
+
+.PP
+Definition at line 17 of file LightPoller\&.java\&.
+.SS "int ca\&.mcgill\&.ecse211\&.threads\&.LightPoller\&.WAIT_TIME = 50\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 21 of file LightPoller\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ECSE211 - Fall 2018 - Final Project from the source code\&.

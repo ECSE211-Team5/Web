@@ -1,0 +1,196 @@
+\hypertarget{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{}\section{ca.\+mcgill.\+ecse211.\+odometer.\+Odometer Class Reference}
+\label{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}\index{ca.\+mcgill.\+ecse211.\+odometer.\+Odometer@{ca.\+mcgill.\+ecse211.\+odometer.\+Odometer}}
+
+
+Inheritance diagram for ca.\+mcgill.\+ecse211.\+odometer.\+Odometer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ca.\+mcgill.\+ecse211.\+odometer.\+Odometer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_af0ff4c5121973a8310cf986e25fa0d87}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static synchronized \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a99171f11e34dea918fa9dd069d721439}{get\+Odometer} (E\+V3\+Large\+Regulated\+Motor left\+Motor, E\+V3\+Large\+Regulated\+Motor right\+Motor, final double T\+R\+A\+CK, final double W\+H\+E\+E\+L\+\_\+\+R\+AD)  throws Odometer\+Exceptions 
+\item 
+static synchronized \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a4e069b5a96cd43b29af0785244a99b51}{get\+Odometer} ()  throws Odometer\+Exceptions 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class implements odometry on our robot.
+
+\begin{DoxyAuthor}{Author}
+Caspar Cedro 
+
+Percy Chen 
+
+Patrick Erath 
+
+Anssam Ghezala 
+
+Susan Matuszewski 
+
+Kamy Moussavi Kafi 
+\end{DoxyAuthor}
+
+
+Definition at line 16 of file Odometer.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a99171f11e34dea918fa9dd069d721439}\label{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a99171f11e34dea918fa9dd069d721439}} 
+\index{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}!get\+Odometer@{get\+Odometer}}
+\index{get\+Odometer@{get\+Odometer}!ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}}
+\subsubsection{\texorpdfstring{get\+Odometer()}{getOdometer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static synchronized \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} ca.\+mcgill.\+ecse211.\+odometer.\+Odometer.\+get\+Odometer (\begin{DoxyParamCaption}\item[{E\+V3\+Large\+Regulated\+Motor}]{left\+Motor,  }\item[{E\+V3\+Large\+Regulated\+Motor}]{right\+Motor,  }\item[{final double}]{T\+R\+A\+CK,  }\item[{final double}]{W\+H\+E\+E\+L\+\_\+\+R\+AD }\end{DoxyParamCaption}) throws \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_exceptions}{Odometer\+Exceptions}\hspace{0.3cm}{\ttfamily [static]}}
+
+This method is meant to ensure only one instance of the odometer is used throughout the code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Motor} & The E\+V3\+Large\+Regulated\+Motor instance for our left motor \\
+\hline
+{\em right\+Motor} & The E\+V3\+Large\+Regulated\+Motor instance for our right motor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new or existing \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} Object 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_exceptions}{Odometer\+Exceptions}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 69 of file Odometer.\+java.
+
+
+\begin{DoxyCode}
+71                                 \{
+72     \textcolor{keywordflow}{if} (odometer != null) \{ \textcolor{comment}{// Return existing object}
+73       \textcolor{keywordflow}{return} odometer;
+74     \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{// create object and return it}
+75       odometer = \textcolor{keyword}{new} Odometer(leftMotor, rightMotor, TRACK, WHEEL\_RAD);
+76       \textcolor{keywordflow}{return} odometer;
+77     \}
+78   \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a99171f11e34dea918fa9dd069d721439_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a4e069b5a96cd43b29af0785244a99b51}\label{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_a4e069b5a96cd43b29af0785244a99b51}} 
+\index{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}!get\+Odometer@{get\+Odometer}}
+\index{get\+Odometer@{get\+Odometer}!ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}}
+\subsubsection{\texorpdfstring{get\+Odometer()}{getOdometer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static synchronized \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} ca.\+mcgill.\+ecse211.\+odometer.\+Odometer.\+get\+Odometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_exceptions}{Odometer\+Exceptions}\hspace{0.3cm}{\ttfamily [static]}}
+
+This class is meant to return the existing \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} Object. It is meant to be used only if an odometer object has been created
+
+\begin{DoxyReturn}{Returns}
+error if no previous odometer exists 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Odometer.\+java.
+
+
+\begin{DoxyCode}
+86                                                                               \{
+87 
+88     \textcolor{keywordflow}{if} (odometer == null) \{
+89       \textcolor{keywordflow}{throw} \textcolor{keyword}{new} OdometerExceptions(\textcolor{stringliteral}{"No previous Odometer exits."});
+90 
+91     \}
+92     \textcolor{keywordflow}{return} odometer;
+93   \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_af0ff4c5121973a8310cf986e25fa0d87}\label{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_af0ff4c5121973a8310cf986e25fa0d87}} 
+\index{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}!run@{run}}
+\index{run@{run}!ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer@{ca\+::mcgill\+::ecse211\+::odometer\+::\+Odometer}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void ca.\+mcgill.\+ecse211.\+odometer.\+Odometer.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method is called when our \hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer}{Odometer} object is started as a thread and begins to keep track of motor rotations 
+
+Definition at line 99 of file Odometer.\+java.
+
+
+\begin{DoxyCode}
+99                     \{
+100     \textcolor{keywordtype}{long} updateStart, updateEnd;
+101 
+102     \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+103       updateStart = System.currentTimeMillis();
+104 
+105       \textcolor{comment}{// TODO Calculate new robot position based on tachometer counts}
+106       \textcolor{keywordtype}{double} distL, distR, deltaD, deltaT, dX, dY;
+107       \textcolor{keywordtype}{int} nowTachoL, nowTachoR;
+108       position = odometer.\hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_data_a8f40f0264c68f0cbed4fff1723ae7863}{getXYT}();
+109 
+110       \textcolor{comment}{// Calculate the change in distances and Theta with motor tacho counts}
+111       nowTachoL = leftMotor.getTachoCount();
+112       nowTachoR = rightMotor.getTachoCount();
+113       distL = 3.14159 * WHEEL\_RAD * (nowTachoL - leftMotorTachoCount) / 180;
+114       distR = 3.14159 * WHEEL\_RAD * (nowTachoR - rightMotorTachoCount) / 180;
+115       leftMotorTachoCount = nowTachoL;
+116       rightMotorTachoCount = nowTachoR;
+117       deltaD = 0.5 * (distL + distR);
+118       deltaT = (distL - distR) / TRACK;
+119 
+120       \textcolor{keywordtype}{double} Theta = Math.toRadians(position[2]);
+121       Theta += deltaT;
+122       dX = deltaD * Math.sin(Theta);
+123       dY = deltaD * Math.cos(Theta);
+124 
+125 
+126       \textcolor{comment}{// TODO Update odometer values with new calculated values}
+127       odometer.\hyperlink{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_data_aaa06f190d634299fcb1b97a1891dad85}{update}(dX / Game.TILE, dY / Game.TILE, Math.toDegrees(deltaT));
+128 
+129 
+130       \textcolor{comment}{// this ensures that the odometer only runs once every period}
+131       updateEnd = System.currentTimeMillis();
+132       \textcolor{keywordflow}{if} (updateEnd - updateStart < ODOMETER\_PERIOD) \{
+133         \textcolor{keywordflow}{try} \{
+134           Thread.sleep(ODOMETER\_PERIOD - (updateEnd - updateStart));
+135         \} \textcolor{keywordflow}{catch} (InterruptedException e) \{
+136           \textcolor{comment}{// there is nothing to be done}
+137         \}
+138       \}
+139     \}
+140   \}
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classca_1_1mcgill_1_1ecse211_1_1odometer_1_1_odometer_af0ff4c5121973a8310cf986e25fa0d87_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ccc/\+Final\+Project/src/ca/mcgill/ecse211/odometer/\hyperlink{_odometer_8java}{Odometer.\+java}\end{DoxyCompactItemize}
