@@ -1,0 +1,3 @@
+[submodule "public/FinalProject"]
+	path = public/FinalProject
+	url = https://github.com/ECSE211-Team5/FinalProject.git
