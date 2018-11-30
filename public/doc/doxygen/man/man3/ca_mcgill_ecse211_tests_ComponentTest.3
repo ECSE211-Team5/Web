@@ -1,4 +1,4 @@
-.TH "ca.mcgill.ecse211.tests.ComponentTest" 3 "Tue Nov 27 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
+.TH "ca.mcgill.ecse211.tests.ComponentTest" 3 "Thu Nov 29 2018" "Version 1.0" "ECSE211 - Fall 2018 - Final Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -69,71 +69,92 @@ Definition at line 25 of file ComponentTest\&.java\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.blackLineTest () throws \fBOdometerExceptions\fP\fC [static]\fP"
+This method tests black line detection
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
 
 .PP
-Definition at line 139 of file ComponentTest\&.java\&.
+Definition at line 164 of file ComponentTest\&.java\&.
 .PP
 .nf
-139                                                                {
-140     Navigation navi = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
-141     GameUtil\&.searchingFinder =
-142         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
-143     int[] arr1 = {0, 0};
-144     int[] arr2 = {0, 0};
-145     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(arr1, arr2);
-146     int count = 0;
-147     while (count < 85) {
-148       navi\&.moveOneTileWithCorrection(0);
-149       count++;
-150       if (count % 7 == 0) {
-151         navi\&.turn(90);
-152       }
-153     }
-154   }
+164                                                                {
+165     Navigation navi = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
+166     GameUtil\&.searchingFinder =
+167         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
+168     int[] arr1 = {0, 0};
+169     int[] arr2 = {0, 0};
+170     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(arr1, arr2);
+171     int count = 0;
+172     while (count < 85) {
+173       navi\&.moveOneTileWithCorrection(0);
+174       count++;
+175       if (count % 7 == 0) {
+176         navi\&.turn(90);
+177       }
+178     }
+179   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.lightSensorTest ()\fC [static]\fP"
-Test for lightSensor 
+This method runs LightSensor tests
 .PP
-Definition at line 109 of file ComponentTest\&.java\&.
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file ComponentTest\&.java\&.
 .PP
 .nf
-109                                        {
-110 
-111   }
+129                                        {
+130 
+131   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.localizationTest () throws \fBOdometerExceptions\fP\fC [static]\fP"
-Test for localizationTest
+This method runs Localization tests
 .PP
 \fBExceptions:\fP
 .RS 4
-\fIOdometerExceptions\fP 
+\fIException\fP 
 .RE
 .PP
 
 .PP
-Definition at line 91 of file ComponentTest\&.java\&.
+Definition at line 107 of file ComponentTest\&.java\&.
 .PP
 .nf
-91                                                                   {
-92     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
-93     UltrasonicLocalizer us = new UltrasonicLocalizer(navigation, Game\&.leftMotor, Game\&.rightMotor);
-94     LightLocalizer lgLoc = new LightLocalizer(navigation, Game\&.leftMotor, Game\&.rightMotor);
-95     us\&.localize(Button\&.ID_LEFT);
-96     lgLoc\&.localize(GameParameters\&.SC);
-97   }
+107                                                                   {
+108     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
+109     UltrasonicLocalizer us = new UltrasonicLocalizer(navigation, Game\&.leftMotor, Game\&.rightMotor);
+110     LightLocalizer lgLoc = new LightLocalizer(navigation, Game\&.leftMotor, Game\&.rightMotor);
+111     us\&.localize(Button\&.ID_LEFT);
+112     lgLoc\&.localize(GameParameters\&.SC);
+113   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.musicTest ()\fC [static]\fP"
+This method tests that music can be played
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
 
 .PP
-Definition at line 156 of file ComponentTest\&.java\&.
+Definition at line 186 of file ComponentTest\&.java\&.
 .PP
 .nf
-156                                  {
-157     GameUtil\&.playMusic();
-158   }
+186                                  {
+187     GameUtil\&.playMusic();
+188   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.navigationTest () throws \fBOdometerExceptions\fP\fC [static]\fP"
-Test for Navigation
+This method runs Navigation tests
 .PP
 \fBExceptions:\fP
 .RS 4
@@ -142,55 +163,63 @@ Test for Navigation
 .PP
 
 .PP
-Definition at line 70 of file ComponentTest\&.java\&.
+Definition at line 73 of file ComponentTest\&.java\&.
 .PP
 .nf
-70                                                                 {
-71     Navigation nav = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
-72     nav\&.travelToWithCorrection(4, 2, false);
-73     nav\&.travelToWithCorrection(0, 0, false);
-74   }
+73                                                                 {
+74     Navigation nav = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
+75     nav\&.travelToWithCorrection(4, 2, false);
+76     nav\&.travelToWithCorrection(0, 0, false);
+77     nav\&.travelToWithCorrection(4, 2, false);
+78     nav\&.travelToWithCorrection(0, 0, false);
+79     nav\&.travelToWithCorrection(4, 2, false);
+80     nav\&.travelToWithCorrection(0, 0, false);
+81     nav\&.travelToWithCorrection(4, 2, false);
+82     nav\&.travelToWithCorrection(0, 0, false);
+83     nav\&.travelToWithCorrection(4, 2, false);
+84     nav\&.travelToWithCorrection(0, 0, false);
+85   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.ringMotorTest () throws \fBOdometerExceptions\fP\fC [static]\fP"
-Test for ring detection
+This method runs RingDetection tests
 .PP
 \fBExceptions:\fP
 .RS 4
-\fIOdometerExceptions\fP 
+\fIException\fP 
 .RE
 .PP
 
 .PP
-Definition at line 118 of file ComponentTest\&.java\&.
+Definition at line 138 of file ComponentTest\&.java\&.
 .PP
 .nf
-118                                                                {
-119     Game\&.INSTANCE\&.usPoller\&.setStart(false);
-120     final RingSearcher searcher = new RingSearcher(Game\&.sensorMotor, Game\&.rodMotor);
-121     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
-122     GameUtil\&.searchingFinder =
-123         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
-124     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(GameParameters\&.US_LL, GameParameters\&.US_UR);
-125     Odometer\&.getOdometer()\&.setXYT(1, 1, 0);
-126     int[] tree = {2, 2};
-127     int[][] other = {{2, 1}, {3, 2}, {2, 3}, {1, 2}};
-128     for (int i = 0; i < 4; i++) {
-129       navigation\&.travelToWithCorrection(other[i][0], other[i][1], false);
-130       navigation\&.turn(-90);
-131       if (i != 3) {
-132         navigation\&.searchRingSet(searcher, true, true);
-133       } else {
-134         navigation\&.searchRingSet(searcher, true, false);
-135       }
-136     }
-137   }
+138                                                                {
+139     Game\&.INSTANCE\&.usPoller\&.setStart(false);
+140     final RingSearcher searcher = new RingSearcher(Game\&.sensorMotor, Game\&.rodMotor);
+141     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
+142     GameUtil\&.searchingFinder =
+143         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
+144     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(GameParameters\&.US_LL, GameParameters\&.US_UR);
+145     Odometer\&.getOdometer()\&.setXYT(1, 1, 0);
+146     int[] tree = {2, 2};
+147     int[][] other = {{2, 1}, {3, 2}, {2, 3}, {1, 2}};
+148     for (int i = 0; i < 4; i++) {
+149       navigation\&.travelToWithCorrection(other[i][0], other[i][1], false);
+150       navigation\&.turn(-90);
+151       if (i != 3) {
+152         navigation\&.searchRingSet(searcher, true, true);
+153       } else {
+154         navigation\&.searchRingSet(searcher, true, false);
+155       }
+156     }
+157   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.runTest (\fBType\fP testType) throws Exception\fC [static]\fP"
-This method selects test for each individual components of the design
+This method executes a specific type of tests
 .PP
 \fBParameters:\fP
 .RS 4
-\fItype\fP 
+\fItype\fP The type of tests to execute 
 .RE
 .PP
 \fBExceptions:\fP
@@ -200,61 +229,75 @@ This method selects test for each individual components of the design
 .PP
 
 .PP
-Definition at line 38 of file ComponentTest\&.java\&.
+Definition at line 41 of file ComponentTest\&.java\&.
 .PP
 .nf
-38                                                              {
-39     try {
-40       switch (testType) {
-41         case Navigation:
-42           ComponentTest\&.navigationTest();
-43           break;
-44         case Localization:
-45           ComponentTest\&.localizationTest();
+41                                                              {
+42     try {
+43       switch (testType) {
+44         case Navigation:
+45           ComponentTest\&.navigationTest();
 46           break;
-47         case UltrasonicSensor:
-48           ComponentTest\&.ultrasonicSensorTest();
+47         case Localization:
+48           ComponentTest\&.localizationTest();
 49           break;
-50         case LightSensor:
-51           ComponentTest\&.lightSensorTest();
+50         case UltrasonicSensor:
+51           ComponentTest\&.ultrasonicSensorTest();
 52           break;
-53         case RingDetection:
-54           ComponentTest\&.ringMotorTest();
+53         case LightSensor:
+54           ComponentTest\&.lightSensorTest();
 55           break;
-56         default:
-57           System\&.out\&.println("Invalid test type selected");
+56         case RingDetection:
+57           ComponentTest\&.ringMotorTest();
 58           break;
-59       }
-60     } catch (Exception e) {
-61       throw e;
-62     }
-63   }
+59         default:
+60           System\&.out\&.println("Invalid test type selected");
+61           break;
+62       }
+63     } catch (Exception e) {
+64       throw e;
+65     }
+66   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.tunnelTest () throws Exception\fC [static]\fP"
+This method runs Tunnel tests
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
 
 .PP
-Definition at line 76 of file ComponentTest\&.java\&.
+Definition at line 92 of file ComponentTest\&.java\&.
 .PP
 .nf
-76                                                    {
-77     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
-78     GameUtil\&.searchingFinder =
-79         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
-80     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(GameParameters\&.US_LL, GameParameters\&.US_UR);
-81     Odometer\&.getOdometer()\&.setXYT(1, 7, 90);
-82     navigation\&.goThroughTunnel();
-83     navigation\&.goThroughTunnel();
-84   }
+92                                                    {
+93     Navigation navigation = new Navigation(Game\&.leftMotor, Game\&.rightMotor);
+94     GameUtil\&.searchingFinder =
+95         new GameUtil\&.PathFinder(GameParameters\&.Island_LL, GameParameters\&.Island_UR);
+96     GameUtil\&.startingFinder = new GameUtil\&.PathFinder(GameParameters\&.US_LL, GameParameters\&.US_UR);
+97     Odometer\&.getOdometer()\&.setXYT(1, 7, 90);
+98     navigation\&.goThroughTunnel();
+99     navigation\&.goThroughTunnel();
+100   }
 .fi
 .SS "static void ca\&.mcgill\&.ecse211\&.tests\&.ComponentTest\&.ultrasonicSensorTest ()\fC [static]\fP"
-Test for UltrasonicSensor 
+This method runs UltrasonicSensor tests
 .PP
-Definition at line 102 of file ComponentTest\&.java\&.
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file ComponentTest\&.java\&.
 .PP
 .nf
-102                                             {
-103 
-104   }
+120                                             {
+121 
+122   }
 .fi
 
 
